@@ -17,15 +17,6 @@ class MetadataAPI {
         return upsertResult
     }
 
-    static main(args) {
-        def username = 'jbray@concentricsecurity.com'
-        Connection.addConnection(username, 'm@xpl0re4', 'login.salesforce.com')
-        def readResult = readMetadata(username, 'CustomObject', ['SVMXC__Site__c'] as String[])
-
-        println readResult.records[0].fullName
-
-    }
-
     static getMetadataConnection(username) {
         def conn = Connection.getConnection(username)
         def sessionId = conn.getSessionHeader().getSessionId()
