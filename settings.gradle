@@ -1,0 +1,5 @@
+rootProject.name = 'SalesforceUtils'
+
+include 'library'
+include 'sfFileMigration'
+include 'misc-scripts'

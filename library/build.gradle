@@ -1,0 +1,40 @@
+plugins {
+	id 'org.springframework.boot' version '3.3.0'
+	id 'io.spring.dependency-management' version '1.1.5'
+	id 'groovy'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+  sourceCompatibility = '20'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.codehaus.groovy:groovy:3.0.20'
+	implementation 'com.force.api:force-wsc:59.0.0'
+	implementation 'com.force.api:force-partner-api:59.0.0'
+	implementation 'com.force.api:force-metadata-api:59.0.0'
+	implementation 'com.force.api:force-apex-api:59.0.0'
+	implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+	implementation 'org.apache.httpcomponents:httpmime:4.5.14'
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.16.0'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.0'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.16.0'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.16.0'
+	implementation 'commons-io:commons-io:2.15.1'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+	}
+}
+
